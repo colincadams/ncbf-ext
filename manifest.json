@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "NCBF - Bail Fund App",
+  "description": "Additional functionality for the Bail Fund App used by NCBF.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["webRequest", "storage"],
+  "host_permissions": ["https://www.bailfundapp.org/*"],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.ts"],
+      "matches": ["https://www.bailfundapp.org/*"]
+    }
+  ]
+}
